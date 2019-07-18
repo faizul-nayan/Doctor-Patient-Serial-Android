@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorIcons"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="6dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp"
+                    android:layout_alignParentTop="true" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="bottom"
+                    android:padding="10dip"
+                    app:centered="true"
+                    app:fillColor="#df0623"
+                    app:pageColor="#fff"
+                    app:snap="false" />
+
+            </android.support.v7.widget.CardView >
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorAsh"
+                android:paddingBottom="15dp"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/drNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="30sp"
+                    android:text="Dr.Mostafizur"/>
+                <TextView
+                    android:id="@+id/drDesignationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="20sp"
+                    android:text="Professor"/>
+                <TextView
+                    android:id="@+id/drQualificationTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="20sp"
+                    android:text="MBBS, BCS, PhD"/>
+                <TextView
+                    android:id="@+id/drAddressTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="20sp"
+                    android:text="Shamoly, Dhaka"/>
+                <TextView
+                    android:id="@+id/drEmailTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="20sp"
+                    android:text="abc@xyz.com"/>
+                <TextView
+                    android:id="@+id/drPhoneTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="20sp"
+                    android:text="017586985475"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/bookedBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   Booked for Serial   "
+                    android:layout_margin="10dp"
+
+                    android:background="@color/colorLight"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:weightSum="2"
+                >
+
+                <TextView
+                    android:id="@+id/dayTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Sunday"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorAsh"/>
+                <TextView
+                    android:id="@+id/dateTv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="2019-06-24"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAsh"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/remainingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="Today's Serial Remaining: 25"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:id="@+id/loginTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAsh"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:text="Login"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

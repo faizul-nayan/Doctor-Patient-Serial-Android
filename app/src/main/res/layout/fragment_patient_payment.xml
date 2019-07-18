@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAsh"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+        android:id="@+id/finalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorIcons"
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/serialTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serial Number: 24"
+            android:textSize="28sp"
+            android:textColor="@color/colorRed"/>
+        <TextView
+            android:id="@+id/tokenTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Token: sadsa545"
+            android:textSize="25sp"
+            android:textColor="@color/colorRed"/>
+
+        <Button
+            android:id="@+id/finishBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Okay  "
+            android:textAllCaps="false"
+            android:textColor="@color/colorIcons"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorGreen"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorIcons"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:text="Pay by Cash"
+                android:textColor="@color/colorAsh"/>
+            <CheckBox
+                android:id="@+id/payViaCashCheck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes"
+                android:checked="true"
+                android:gravity="center"
+                android:textColor="@color/colorAsh"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/payOnlineLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:text="Pay via online"
+                android:textColor="@color/colorAsh"/>
+            <CheckBox
+                android:id="@+id/payViaOnlineCheck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yes"
+                android:checked="true"
+                android:gravity="center"
+                android:textColor="@color/colorAsh"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/paymentMethodTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:text="Select payment method"
+            android:textColor="@color/colorAsh"/>
+
+        <LinearLayout
+            android:id="@+id/paymentMethodLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:id="@+id/paymentRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:id="@+id/bKashRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:checked="true"
+                    android:drawableRight="@drawable/rsz_1bkash"
+                    android:textColor="@color/colorAsh"/>
+                <RadioButton
+                    android:id="@+id/visaRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:drawableRight="@drawable/rsz_visa"
+                    android:textColor="@color/colorAsh"/>
+                <RadioButton
+                    android:id="@+id/masterRadio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="18sp"
+                    android:drawableRight="@drawable/rsz_master"
+                    android:textColor="@color/colorAsh"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/paymentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Make Payment   "
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:textColor="@color/colorIcons"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:background="@color/colorGreen"/>
+
+        <LinearLayout
+            android:id="@+id/refLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merchant account: +8801714-767735"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorGreen"/>
+
+            <EditText
+                android:id="@+id/refEt"
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAsh"
+                android:textColor="@color/colorAsh"
+                android:hint="Reference no"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

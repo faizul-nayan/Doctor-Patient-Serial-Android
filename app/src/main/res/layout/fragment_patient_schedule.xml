@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                        <com.applandeo.materialcalendarview.CalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/noDataFoundLayout"
+                            android:layout_width="match_parent"
+                            android:background="@color/colorIcons"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:layout_height="200dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No Schedule found for the day"
+                                    android:textSize="25sp"
+                                    android:textColor="@color/colorRed"
+
+                                    />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/serialDetailsLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorIcons"
+                            android:paddingBottom="20dp"
+                            android:paddingTop="20dp"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/hospitalNameTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bangladesh Specalized Hospital"
+                                    android:textSize="22sp"
+                                    android:textColor="@color/colorAsh"
+                                    android:layout_gravity="center"
+
+                                    />
+                                <TextView
+                                    android:id="@+id/addressTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Shamoly,Dhaka"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/colorAsh"
+                                    android:layout_gravity="center"
+
+                                    />
+                                <TextView
+                                    android:id="@+id/visitingTimeTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="11:00PM to 08:00PM"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorGreen"
+                                    android:layout_gravity="center"
+
+                                    />
+                                <TextView
+                                    android:id="@+id/serialTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Serial 28"
+                                    android:textSize="22sp"
+                                    android:textColor="@color/colorRed"
+                                    android:layout_gravity="center"
+
+                                    />
+
+                        </LinearLayout>
+
+
+                </LinearLayout>
+
+        </ScrollView>
+
+
+
+
+</LinearLayout>

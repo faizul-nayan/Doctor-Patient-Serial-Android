@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAsh">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/colorIcons"
+                android:foreground="?android:attr/selectableItemBackground">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Info"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:layout_margin="15dp"
+                        />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:layout_marginBottom="20dp">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_marginTop="15dp"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/image_view"
+                            android:layout_width="120dp"
+                            android:layout_height="110dp"
+                            app:riv_border_color="#788"
+                            app:riv_border_width="2dip"
+                            app:riv_corner_radius="50dp"
+                            app:riv_mutate_background="true"
+                            app:riv_oval="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true" />
+
+                        <Button
+                            android:id="@+id/button_add"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="  Add Photo  "
+                            android:textColor="@color/colorIcons"
+                            android:background="@drawable/corner_redious_member"/>
+
+                    </RelativeLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/fullNameEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Name *"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/colorAsh"
+                            android:textColorHint="@color/colorAsh"/>
+                        <EditText
+                            android:id="@+id/designationEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Designation"
+                            android:textColor="@color/colorAsh"
+                            android:inputType="textPersonName"
+                            android:textColorHint="@color/colorAsh"/>
+                        <EditText
+                            android:id="@+id/qualificationEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Qualifications *"
+                            android:textColor="@color/colorAsh"
+                            android:inputType="textMultiLine"
+                            android:textColorHint="@color/colorAsh"/>
+                        <EditText
+                            android:id="@+id/phoneEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:textColor="@color/colorAsh"
+                            android:hint="Phone number *"
+                            android:textColorHint="@color/colorAsh"/>
+                        <EditText
+                            android:id="@+id/emailEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/colorAsh"
+                            android:hint="Email *"
+                            android:textColorHint="@color/colorAsh"/>
+                        <EditText
+                            android:id="@+id/addressEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAsh"
+                            android:inputType="textPostalAddress"
+                            android:hint="Address"
+                            android:textColorHint="@color/colorAsh"/>
+
+                        <Button
+                            android:id="@+id/infoSavedBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="false"
+                            android:layout_gravity="right"
+                            android:layout_margin="10dp"
+                            android:textColor="@color/colorIcons"
+                            android:background="@drawable/corner_redious_member"
+                            android:text="Save"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/colorIcons"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Schedule Setting"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:layout_margin="15dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/dayRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
