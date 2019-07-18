@@ -1,0 +1,133 @@
+/*
+SQLyog Community v12.4.2 (64 bit)
+MySQL - 5.7.26-0ubuntu0.16.04.1 : Database - pmscs_ju
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`pmscs_ju` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `pmscs_ju`;
+
+/*Table structure for table `doctor` */
+
+DROP TABLE IF EXISTS `doctor`;
+
+CREATE TABLE `doctor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` text NOT NULL,
+  `designation` text,
+  `phone_number` text NOT NULL,
+  `email` text NOT NULL,
+  `address` text,
+  `qualification` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `patient_serial` */
+
+DROP TABLE IF EXISTS `patient_serial`;
+
+CREATE TABLE `patient_serial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `patient_id` int(11) DEFAULT NULL,
+  `serial` int(11) DEFAULT NULL,
+  `day` text,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `patients` */
+
+DROP TABLE IF EXISTS `patients`;
+
+CREATE TABLE `patients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` text,
+  `father_spouse_name` text,
+  `address` text,
+  `phone_number` text,
+  `email_address` text,
+  `age` int(11) DEFAULT NULL,
+  `gender` text,
+  `blood_group` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `payment` */
+
+DROP TABLE IF EXISTS `payment`;
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `patient_id` int(11) DEFAULT NULL,
+  `serial_id` int(11) DEFAULT NULL,
+  `pay_cash` int(11) DEFAULT NULL,
+  `pay_bKash` int(11) DEFAULT NULL,
+  `bKash_rec_number` text,
+  `pay_online` int(11) DEFAULT NULL,
+  `pay_other` int(11) DEFAULT NULL,
+  `other_ref` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `schedule` */
+
+DROP TABLE IF EXISTS `schedule`;
+
+CREATE TABLE `schedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` text,
+  `hospital_name` text,
+  `employeer_type` text,
+  `max_visitor` int(11) DEFAULT NULL,
+  `time_from` text,
+  `time_to` text,
+  `is_disable` int(11) DEFAULT NULL,
+  `address` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `user_audit_trails` */
+
+DROP TABLE IF EXISTS `user_audit_trails`;
+
+CREATE TABLE `user_audit_trails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `time_stamp` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `branch_id` int(11) DEFAULT NULL,
+  `table_name` varchar(50) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `action` varchar(20) DEFAULT NULL,
+  `old_value` text,
+  `new_value` text,
+  `ip_address` varchar(50) DEFAULT NULL,
+  `reference_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=370044 DEFAULT CHARSET=latin1;
+
+/*Table structure for table `user_sessions` */
+
+DROP TABLE IF EXISTS `user_sessions`;
+
+CREATE TABLE `user_sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(45) NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

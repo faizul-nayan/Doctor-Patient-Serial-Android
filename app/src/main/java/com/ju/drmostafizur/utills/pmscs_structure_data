@@ -1,0 +1,178 @@
+/*
+SQLyog Community v12.4.2 (64 bit)
+MySQL - 5.7.26-0ubuntu0.16.04.1 : Database - pmscs_ju
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`pmscs_ju` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `pmscs_ju`;
+
+/*Table structure for table `doctor` */
+
+DROP TABLE IF EXISTS `doctor`;
+
+CREATE TABLE `doctor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` text NOT NULL,
+  `designation` text,
+  `phone_number` text NOT NULL,
+  `email` text NOT NULL,
+  `address` text,
+  `qualification` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+/*Data for the table `doctor` */
+
+insert  into `doctor`(`id`,`full_name`,`designation`,`phone_number`,`email`,`address`,`qualification`) values 
+(12,'Dr Mostafizur Rahman','Professor','01758 90 85 20','professor.mostafizur@gmail.com','Shamoly, Dhaka','Phd, BCS, MBBS,FRCS');
+
+/*Table structure for table `patient_serial` */
+
+DROP TABLE IF EXISTS `patient_serial`;
+
+CREATE TABLE `patient_serial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `patient_id` int(11) DEFAULT NULL,
+  `serial` int(11) DEFAULT NULL,
+  `day` text,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+/*Data for the table `patient_serial` */
+
+insert  into `patient_serial`(`id`,`patient_id`,`serial`,`day`,`date`) values 
+(18,32,1,'Thursday','2019-07-04'),
+(19,33,1,'Wednesday','2019-07-17'),
+(20,34,2,'Wednesday','2019-07-17'),
+(21,35,1,'Thursday','2019-07-18');
+
+/*Table structure for table `patients` */
+
+DROP TABLE IF EXISTS `patients`;
+
+CREATE TABLE `patients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` text,
+  `father_spouse_name` text,
+  `address` text,
+  `phone_number` text,
+  `email_address` text,
+  `age` int(11) DEFAULT NULL,
+  `gender` text,
+  `blood_group` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+
+/*Data for the table `patients` */
+
+insert  into `patients`(`id`,`full_name`,`father_spouse_name`,`address`,`phone_number`,`email_address`,`age`,`gender`,`blood_group`) values 
+(32,'Johorul Islam','Jibon Mia','Uttara, Dhaka','0176985412','johorul@gmail.com',25,'Male','o+'),
+(33,'Morzina Begum','Hozrotullah','Banani, Dhaka','01695489325','dsad@yahoo.com',80,'Male','o-'),
+(34,'Kamal Hossian','Jamal Hossian','Panthopath, Dhaka','0191548645','sadas@asd.com',50,'Male','AB+'),
+(35,'asdsa','sdfd','h','41564','sad@sdasd.com',54,'Male','o-');
+
+/*Table structure for table `payment` */
+
+DROP TABLE IF EXISTS `payment`;
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `patient_id` int(11) DEFAULT NULL,
+  `serial_id` int(11) DEFAULT NULL,
+  `pay_cash` int(11) DEFAULT NULL,
+  `pay_bKash` int(11) DEFAULT NULL,
+  `bKash_rec_number` text,
+  `pay_online` int(11) DEFAULT NULL,
+  `pay_other` int(11) DEFAULT NULL,
+  `other_ref` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+/*Data for the table `payment` */
+
+insert  into `payment`(`id`,`patient_id`,`serial_id`,`pay_cash`,`pay_bKash`,`bKash_rec_number`,`pay_online`,`pay_other`,`other_ref`) values 
+(16,32,18,0,1,'ft5643f7',1,0,NULL),
+(17,33,19,1,0,NULL,0,0,NULL),
+(18,34,20,0,0,'',1,1,''),
+(19,35,21,1,0,NULL,0,0,NULL);
+
+/*Table structure for table `schedule` */
+
+DROP TABLE IF EXISTS `schedule`;
+
+CREATE TABLE `schedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` text,
+  `hospital_name` text,
+  `employeer_type` text,
+  `max_visitor` int(11) DEFAULT NULL,
+  `time_from` text,
+  `time_to` text,
+  `is_disable` int(11) DEFAULT NULL,
+  `address` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+/*Data for the table `schedule` */
+
+insert  into `schedule`(`id`,`day`,`hospital_name`,`employeer_type`,`max_visitor`,`time_from`,`time_to`,`is_disable`,`address`) values 
+(1,'Sunday','Central Hospital','Permanent',36,'11:54 AM','2:54 AM',0,'Mohammadpur, Dhaka'),
+(3,'Monday','Catharsis Medical Centre Limited','Parmanent',25,'12:40 AM','5:50 PM',0,'Gazirpur, Dhaka'),
+(4,'Tuesday','Chander Hasi Hospital Limited','Parmanent',1,'12:40 AM','5:50 PM',0,'Habigonj, Sylhet'),
+(5,'Wednesday','Dhaka Central Medical College Hospital','Parmanent',25,'12:40 AM','5:50 PM',0,'Adabor, Dhaka'),
+(6,'Friday','Greenland Hospital Limited','Parmanent',1,'12:40 AM','5:50 PM',0,' Sector - 10, Uttara, Dhaka'),
+(8,'Saturday','MH Samorita Hospital & Medical College','Parmanent',25,'12:40 AM','5:50 PM',0,' Love Road, Tejgaon,Dhaka');
+
+/*Table structure for table `user_sessions` */
+
+DROP TABLE IF EXISTS `user_sessions`;
+
+CREATE TABLE `user_sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(45) NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `user_sessions` */
+
+insert  into `user_sessions`(`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`) values 
+('17bfd6eb1306424f28826691d3d9dfb7','192.168.2.12','okhttp/3.10.0',1563460540,''),
+('1e912bbd497916f37cb68e0071e24dff','192.168.2.12','okhttp/3.10.0',1563460552,''),
+('1f1120fe4eaa1952580aa5fed7d50bb3','192.168.2.12','okhttp/3.10.0',1563459067,''),
+('2d5b3ffc41c7fd848452e2dad6d4e8ce','192.168.2.12','okhttp/3.10.0',1563459995,''),
+('33b826eccf5d7f12a3becf4d20005c34','192.168.2.12','okhttp/3.10.0',1563459054,''),
+('3cca0a140feb26fba0a4ef2452a3eb09','192.168.2.12','okhttp/3.10.0',1563460940,''),
+('4e0831b5cfdc4ea3cdd1ad88a55f0219','192.168.2.12','okhttp/3.10.0',1563461009,''),
+('6aa97c1f3f817593fe63ff26954b33de','192.168.2.12','okhttp/3.10.0',1563459059,''),
+('6acd865dfdb2d78db2cf8b5ecac30d09','192.168.2.12','okhttp/3.10.0',1563460941,''),
+('86915e31c939587ab46b55c7530e4cde','192.168.2.12','okhttp/3.10.0',1563460932,''),
+('9e5855b33d771e8c2c06d72750189fff','192.168.2.12','okhttp/3.10.0',1563459987,''),
+('a4e4455dc79249c3fc4218a5e7215db0','192.168.2.12','okhttp/3.10.0',1563461011,''),
+('baf170ecfd414ef8be2644bce80a1e28','192.168.2.12','okhttp/3.10.0',1563461014,''),
+('bd7c41f1af83bc3703b1ff0149bb0a1a','192.168.2.12','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',1563460017,''),
+('c49c790e65ccbc2178dad24c371e3779','192.168.2.12','okhttp/3.10.0',1563459996,''),
+('cd9d6eb140599a97a319720e0265704e','192.168.2.12','okhttp/3.10.0',1563460934,''),
+('dc506a2b606240f0a0cd3c8e36194a05','192.168.2.12','okhttp/3.10.0',1563460884,''),
+('e2bf9afe14a47f1673f7fc25bff8969b','192.168.2.12','okhttp/3.10.0',1563460550,''),
+('e469a8f17f9be7ab936d1654fdcc7940','192.168.2.12','okhttp/3.10.0',1563461018,''),
+('eb867c9dc26e1bd56284177319768c29','192.168.2.12','okhttp/3.10.0',1563460882,''),
+('fe8b634db85e8d586a0d5231b842f827','192.168.2.12','okhttp/3.10.0',1563461015,'');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
